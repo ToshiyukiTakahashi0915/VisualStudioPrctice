@@ -548,41 +548,71 @@
 
 //*********
 
-String Asterisk = "*******";
+//int num = 20;
+//int Num = num;
 
-Pyramid(Asterisk);
+//Pyramid(num, Num);
 
-void Pyramid(String Asterisk)
-{
+//void Pyramid(int num, int Num)
+//{
 
-    int asterisk_count = Asterisk.Length;
-    String pyramid_parts = "*";
-    Console.WriteLine(pyramid_parts);
+//    String PyramidParts = "*";
 
-    for (int i = 0; i < asterisk_count; i++)
-    {
-        pyramid_parts += "**";
-        Console.WriteLine(pyramid_parts);
-    }
-}
+//    for (int i = 0; i < num ; i++)
+//    {
+//        String space = "";
+
+//        //スペースを足していくサイクル
+//        for (int j = 0; j < Num; j++) 
+//        { 
+//            // 最後の周だけスペースは加えない分岐
+//            if (j == Num - 1)
+//                 space += "";
+//            else space += " ";
+
+//        }
+//        Num--;
+
+//        // for文の一周目だけ分岐させる
+//        if (i == 0)
+//        {
+//            Console.WriteLine(space + PyramidParts);
+//        }
+//        else
+//        {
+//            pyramid_parts += "**";
+//            Console.WriteLine(space + PyramidParts);
+//        }        
+//    }
+//}
 
 
 
 //課題18.
 
-//  複数人(人数は指定なし)の点数を引数で渡すと、平均点と最高点、最小点を出 力する関数を作ってください。
+//  複数人(人数は指定なし)の点数を引数で渡すと、平均点と最高点、最小点を出力する関数を作ってください。
 
 //  引数は動的配列で渡してください。
 
+//List<int> Points = new List<int> {75, 60, 93, 44, 58 };
 
+//Points.Add(77);
+
+//Calculation(Points);
+
+
+//void Calculation(List<int> Points)
+//{
+//    // 平均値は四捨五入にしてる
+//    Console.WriteLine("平均点: " + Math.Round(Points.Average()) + "点 最高点: " + 
+//        Points.Max() + "点 最小点: " + Points.Min() + "点です。");
+//}
 
 
 
 //課題19.
 
 //   開始数字と終了数字、検索数字を引数で渡し、開始 ～ 終了までの間に検索数字が何回出てきたか出力する関数を作成せよ
-
-
 
 //  <例>
 
@@ -594,6 +624,24 @@ void Pyramid(String Asterisk)
 
 //   (12⇒1個、20⇒1個、21⇒1個、22⇒2個  合計：5個)
 
+int StartNum = 8;
+
+int EndNum = 88;
+
+String SearchNum = "8";
+
+NumCount(StartNum, EndNum, SearchNum);
+
+void NumCount(int StartNum, int EndNum, String SearchNum)
+{
+    int count = 0;
+    for (int i = StartNum; i <= EndNum; i++)
+    {
+        if (i.ToString().Contains(SearchNum) == true)
+            count++;
+    }
+    Console.WriteLine(count);
+}
 
 
 //課題20.
@@ -617,3 +665,42 @@ void Pyramid(String Asterisk)
 //課題21.
 
 //  ユーザが数値を入力した数だけ2の累乗を算出するプログラムを作成せよ
+
+//課題22.
+
+//  int 型の配列に格納されている値の最大値、最小値および平均値を求めよ。
+
+//  配列の値はテキストファイルに記載し、プログラムからは指定したファイルを開いて値を取得すること
+
+
+
+//課題23.
+
+//  任意の数値を入力し、その数値以下のフィボナッチ数列をすべて表示しなさい。
+
+//  ※フィボナッチ数列は、どの数値も前2つの数値を足した数になります。(わからなければ聞くか、調べてください)
+
+
+
+//  課題23の例
+
+//   入力：100
+
+//   出力：0 1 1 2 3 5 8 13 21 34 55 89
+
+
+
+
+//課題24.
+
+//  5つの数値を入力し、大きい順に並べなおしなさい。ただし、ループ文(while文、for文)を使用して並べ替えること。
+
+//  (ライブラリに並べ替えるものがありますが、使用しないでください)
+
+
+
+//  課題24の例
+
+//  入力：10、-3、1、0、-8
+
+//  出力：10、1、0、-3、-8
